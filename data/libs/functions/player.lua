@@ -748,3 +748,7 @@ function Player:canFightBoss(bossNameOrId)
 	local cooldown = self:getBossCooldown(bossNameOrId)
 	return cooldown <= os.time()
 end
+
+function Player:questKV(questName)
+	return self:kv():scoped("quests"):scoped(questName)
+end
